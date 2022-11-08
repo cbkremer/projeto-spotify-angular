@@ -1,0 +1,28 @@
+* {
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #616161;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body{
+    margin:0;
+    background-color:rgb(29,29,29);
+}
+.container {
+    display: flex;
+    flex-direction: row;
+}
+a {
+    cursor: pointer;
+    color: #1976d2;
+    text-decoration: none;
+}
+  
+a:hover {
+    opacity: 0.8;
+}
+#div_main{
+    width:500px;
+    padding: 50%;
+}
