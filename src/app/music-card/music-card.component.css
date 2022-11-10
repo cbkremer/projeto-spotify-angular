@@ -1,0 +1,29 @@
+.music_card_div{
+  float:left;
+  background-color:rgb(39, 39, 39);
+  width:200px;
+  height:260px;
+  margin-right:10px;
+  margin-top:10px;
+  padding-top:1px;
+}
+.music_card_icon{
+  margin-top:20px;
+  margin-left:20px;
+  color:rgb(0, 0, 0);
+  background-color:white;
+  text-align:center;
+  height:160px;
+  width:160px;
+}
+.music_card-info, h4, h5{
+  margin-left:20px;
+}
+h4{
+  color:white;
+}
+h5{
+  margin-top:-15px;
+  color:rgb(141, 141, 141);
+}
+

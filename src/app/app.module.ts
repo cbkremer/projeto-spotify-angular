@@ -7,6 +7,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { CenterMainComponent } from './center-main/center-main.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MusicCardComponent } from './music-card/music-card.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     TopBarComponent,
     SideBarComponent,
-    CenterMainComponent
+    CenterMainComponent,
+    MusicCardComponent
   ],
   imports: [
     BrowserModule,
