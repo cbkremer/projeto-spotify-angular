@@ -1,9 +1,19 @@
-<div class="music_card_div">
+<div class="music_card_div" (click)="criarPlaylist()">
   <div class="music_card_icon">
     placeholder
   </div>
-  <div class="music_card_info">
-    <h4>nome</h4>
-    <h5>artista</h5>
+  <div class="music_card_info_nova">
+    <h4>Nova</h4>
+  </div>
+</div>
+<div *ngFor="let playlist of playlists" >
+  <div class="music_card_div" (click)="abrirPlaylist(playlist)">
+    <div class="music_card_icon">
+      placeholder
+    </div>
+    <div class="music_card_info">
+      <h4>{{playlist.name}}</h4>
+      <h5>Musicas: {{playlist.quantity}}</h5>
+    </div>
   </div>
 </div>

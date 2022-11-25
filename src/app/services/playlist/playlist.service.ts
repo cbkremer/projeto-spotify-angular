@@ -11,7 +11,7 @@ export class PlaylistService {
   private get_user_playlists_url = 'http://localhost:8082/playlist/'+this.id;
   constructor(private httpClient: HttpClient) { }
 
-  getUserPlaylists(): Observable<PlaylistModel>{
-    return this.httpClient.get<PlaylistModel>(this.get_user_playlists_url);
+  getUserPlaylists(): Observable<PlaylistModel[]>{
+    return this.httpClient.get<PlaylistModel[]>(this.get_user_playlists_url);
   }
 }

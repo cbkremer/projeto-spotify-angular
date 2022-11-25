@@ -1,15 +1,13 @@
-import { PlaylistModel } from './../model/playlist.model';
-import { UserInfoModel } from 'src/app/model/user_info.model';
 import { Component, OnInit } from '@angular/core';
+import { UserInfoModel } from '../model/user_info.model';
 import { UserInfoService } from '../services/user-info/user-info.service';
-import { PlaylistService } from '../services/playlist/playlist.service';
 
 @Component({
-  selector: 'app-center-main',
-  templateUrl: './center-main.component.html',
-  styleUrls: ['./center-main.component.css']
+  selector: 'app-library',
+  templateUrl: './library.component.html',
+  styleUrls: ['./library.component.css']
 })
-export class CenterMainComponent implements OnInit {
+export class LibraryComponent implements OnInit {
   user_info:UserInfoModel;
 
 

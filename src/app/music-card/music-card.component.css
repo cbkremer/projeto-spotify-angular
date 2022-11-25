@@ -6,6 +6,7 @@
   margin-right:10px;
   margin-top:10px;
   padding-top:1px;
+  border-radius: 5%;
 }
 .music_card_icon{
   margin-top:20px;
@@ -15,9 +16,14 @@
   text-align:center;
   height:160px;
   width:160px;
+  border-radius: 5%;
 }
-.music_card-info, h4, h5{
-  margin-left:20px;
+.music_card_info, h4, h5{
+  margin-left:10px;
+}
+.music_card_info_nova h4{
+  margin-left:0;
+  text-align: center;
 }
 h4{
   color:white;
@@ -26,4 +32,6 @@ h5{
   margin-top:-15px;
   color:rgb(141, 141, 141);
 }
-
+.music_card_div:hover{
+  background-color:rgb(68, 68, 68);
+}

@@ -8,6 +8,9 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { CenterMainComponent } from './center-main/center-main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MusicCardComponent } from './music-card/music-card.component';
+import { TestComponent } from './test/test.component';
+import { PlaylistScreenComponent } from './playlist-screen/playlist-screen.component';
+import { LibraryComponent } from './library/library.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { MusicCardComponent } from './music-card/music-card.component';
     TopBarComponent,
     SideBarComponent,
     CenterMainComponent,
-    MusicCardComponent
+    MusicCardComponent,
+    TestComponent,
+    PlaylistScreenComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule,
