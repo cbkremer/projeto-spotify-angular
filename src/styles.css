@@ -18,11 +18,15 @@ a {
     color: #1976d2;
     text-decoration: none;
 }
-  
+
 a:hover {
     opacity: 0.8;
 }
 #div_main{
     width:500px;
     padding: 50%;
+}
+.center_main_section{
+  margin-left: 19%;
+  margin-top: 82px;
 }

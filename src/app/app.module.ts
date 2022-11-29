@@ -9,8 +9,9 @@ import { CenterMainComponent } from './center-main/center-main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MusicCardComponent } from './music-card/music-card.component';
 import { TestComponent } from './test/test.component';
-import { PlaylistScreenComponent } from './playlist-screen/playlist-screen.component';
 import { LibraryComponent } from './library/library.component';
+import { MusicCardHorizontalComponent } from './music-card-horizontal/music-card-horizontal.component';
+import { ShowPlaylistComponent } from './show-playlist/show-playlist.component';
 
 
 @NgModule({
@@ -21,8 +22,9 @@ import { LibraryComponent } from './library/library.component';
     CenterMainComponent,
     MusicCardComponent,
     TestComponent,
-    PlaylistScreenComponent,
-    LibraryComponent
+    LibraryComponent,
+    MusicCardHorizontalComponent,
+    ShowPlaylistComponent,
   ],
   imports: [
     BrowserModule,

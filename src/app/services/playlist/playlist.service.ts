@@ -6,9 +6,8 @@ import { PlaylistModel } from 'src/app/model/playlist.model';
   providedIn: 'root'
 })
 export class PlaylistService {
-
-  private id = 19;
-  private get_user_playlists_url = 'http://localhost:8082/playlist/'+this.id;
+  private name = "nome8";
+  private get_user_playlists_url = 'http://localhost:8082/playlist/'+this.name;
   constructor(private httpClient: HttpClient) { }
 
   getUserPlaylists(): Observable<PlaylistModel[]>{

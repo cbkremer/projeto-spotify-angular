@@ -1,8 +1,7 @@
 import { PlaylistService } from './../services/playlist/playlist.service';
 import { PlaylistModel } from 'src/app/model/playlist.model';
-import { UserInfoModel } from 'src/app/model/user_info.model';
 import { Component, OnInit } from '@angular/core';
-import { UserInfoService } from '../services/user-info/user-info.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-music-card',
@@ -10,16 +9,17 @@ import { UserInfoService } from '../services/user-info/user-info.service';
   styleUrls: ['./music-card.component.css']
 })
 export class MusicCardComponent implements OnInit {
-  playlists: PlaylistModel[] = [];
+  public playlists: PlaylistModel[] = [];
   playlist: PlaylistModel | any;
 
-  constructor(private playlist_service: PlaylistService) {
+  constructor(private playlist_service: PlaylistService, public router: Router) {
   }
 
   ngOnInit(): void {
       this.playlist_service.getUserPlaylists().subscribe((playlists: PlaylistModel[]) => {
       console.table(playlists);
       this.playlists = playlists;
+      //this.playlist = null;
       //this.playlist = {musics: [], name: '', quantity: 0, user_name: '', tag: 0};
       //this.user_info.playlists = JSON.parse(user_info.playlists);
     });
@@ -31,6 +31,7 @@ export class MusicCardComponent implements OnInit {
   public abrirPlaylist(playlist: PlaylistModel){
     console.log(playlist);
     this.playlist = playlist;
+    this.router.navigate(['show-playlist/'+playlist.tag]);
   }
   public pegarPlaylistAberta(): PlaylistModel{
     return this.playlist;
