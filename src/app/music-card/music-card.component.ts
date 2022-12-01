@@ -29,7 +29,7 @@ export class MusicCardComponent implements OnInit {
     console.log('criar nova');
   }
   public abrirPlaylist(playlist: PlaylistModel){
-    console.log(playlist);
+    //console.log(playlist);
     this.playlist = playlist;
     this.router.navigate(['show-playlist/'+playlist.tag]);
   }

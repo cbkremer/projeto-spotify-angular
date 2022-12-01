@@ -1,6 +1,6 @@
 import { MusicModel } from './music.model';
 export interface PlaylistModel{
-  musics: MusicModel[];
+  musicsDTO: MusicModel[];
   name: string;
   quantity: number;
   user_name: string;

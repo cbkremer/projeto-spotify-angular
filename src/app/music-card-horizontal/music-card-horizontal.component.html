@@ -1,1 +1,30 @@
-<p>music-card-horizontal works!</p>
+<div class="playlist_name">{{playlist.name}}</div>
+<div *ngIf="playlist.musicsDTO.length == 0">
+  <h5 style="margin-top:50px;">Playlist vazia</h5>
+</div>
+<div *ngIf="playlist.musicsDTO.length > 0">
+  <div class="music_cardH_header">
+    <div class="music_cardH_icon_header">
+
+    </div>
+    <div class="music_cardH_name_header">
+      <h5>Nome</h5>
+    </div>
+    <div class="music_cardH_tag_header">
+      <h5>Tag</h5>
+    </div>
+  </div>
+  <div *ngFor="let music of playlist.musicsDTO">
+    <div class="music_card_div">
+      <div class="music_card_icon">
+        <img src="../../assets/icones/icone.png"/>
+      </div>
+      <div class="music_cardH_name">
+        <h5>{{music.name}}</h5>
+      </div>
+      <div class="music_cardH_tag">
+        <h5>{{music.tag}}</h5>
+      </div>
+    </div>
+  </div>
+</div>

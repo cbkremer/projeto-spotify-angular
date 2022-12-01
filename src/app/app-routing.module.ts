@@ -9,9 +9,9 @@ import { ShowPlaylistComponent } from './show-playlist/show-playlist.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'center-main', pathMatch: 'full'},
-  {path: 'center-main/:id', component: CenterMainComponent},
-  {path: 'library/:id', component: LibraryComponent},
-  {path: 'show-playlist/:id', component: ShowPlaylistComponent}
+  {path: 'center-main/:user_name', component: CenterMainComponent},
+  {path: 'library/:user_name', component: LibraryComponent},
+  {path: 'show-playlist/:playlist_tag', component: ShowPlaylistComponent}
   //{path: '', redirectTo: 'extrato', pathMatch:'full'},
   //{path: 'extrato', component: ExtratoComponent},
   //{path: 'nova-transferencia', component: NovaTransferenciaComponent}
