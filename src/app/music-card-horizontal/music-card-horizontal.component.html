@@ -1,21 +1,44 @@
-<div class="playlist_name">{{playlist.name}}</div>
-<div *ngIf="playlist.musicsDTO.length == 0">
-  <h5 style="margin-top:50px;">Playlist vazia</h5>
-</div>
-<div *ngIf="playlist.musicsDTO.length > 0">
-  <div class="music_cardH_header">
-    <div class="music_cardH_icon_header">
+<div *ngIf="all_musics == false">
 
+  <div *ngIf="playlist.musicsDTO.length == 0">
+    <h5 style="margin-top:50px;">Playlist vazia</h5>
+  </div>
+  <div *ngIf="playlist.musicsDTO.length > 0">
+    <div class="music_cardH_header">
+      <div class="music_cardH_icon_header">
+
+      </div>
+      <div class="music_cardH_name_header">
+        <h5>Nome</h5>
+      </div>
+      <div class="music_cardH_tag_header">
+        <h5>Tag</h5>
+      </div>
     </div>
-    <div class="music_cardH_name_header">
-      <h5>Nome</h5>
-    </div>
-    <div class="music_cardH_tag_header">
-      <h5>Tag</h5>
+    <div *ngIf="all_musics == false">
+      <div *ngFor="let music of playlist.musicsDTO">
+        <div class="music_card_div" style="cursor:pointer;" (click)="clickMusic(music)">
+          <div class="music_card_icon">
+            <img src="../../assets/icones/icone.png"/>
+          </div>
+          <div class="music_cardH_name">
+            <h5>{{music.name}}</h5>
+          </div>
+          <div class="music_cardH_tag">
+            <h5>{{music.tag}}</h5>
+          </div>
+        </div>
+        <div class="remove_button" (click)="removeMusic(music)">Remover</div>
+      </div>
     </div>
   </div>
-  <div *ngFor="let music of playlist.musicsDTO">
-    <div class="music_card_div">
+</div>
+<div *ngIf="all_musics == true">
+  <div class="title">
+    <h1>Todas as músicas:</h1>
+  </div>
+  <div *ngFor="let music of musics">
+    <div class="music_card_div" style="cursor:pointer;" (click)="clickMusic(music)">
       <div class="music_card_icon">
         <img src="../../assets/icones/icone.png"/>
       </div>
@@ -26,5 +49,6 @@
         <h5>{{music.tag}}</h5>
       </div>
     </div>
+    <div class="add_button" (click)="addMusic(music)">Adicionar à playlist</div>
   </div>
 </div>

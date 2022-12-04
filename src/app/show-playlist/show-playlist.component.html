@@ -1,6 +1,12 @@
-<section class="center_main_section">
+i<section class="center_main_section">
 
   <div class="horizontal_card_div">
+    <div *ngIf="editar_nome == false" class="playlist_name">{{playlist.name}}</div>
+    <div *ngIf="editar_nome == true" class="playlist_name">
+      <input id="nome_input" [(ngModel)]="playlist.name" name="playlist.name">
+    </div>
+    <div *ngIf="editar_nome == false" class="alterar_nome"  (click)="editarNome()">Alterar nome</div>
+    <div *ngIf="editar_nome == true" class="alterar_nome" (click)="salvarNome()">Salvar</div>
     <app-music-card-horizontal></app-music-card-horizontal>
   </div>
 </section>

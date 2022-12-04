@@ -1,0 +1,14 @@
+.playlist_name{
+  color:white;
+  font-size: 60px;
+}
+.alterar_nome:hover{
+  color:white;
+  cursor: pointer;
+}
+#nome_input{
+  background: rgba(0, 0, 0, 0);
+  border-style: solid;
+  color:white;
+  font-size: 60px;
+}

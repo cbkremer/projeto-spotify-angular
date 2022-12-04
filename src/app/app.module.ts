@@ -12,6 +12,7 @@ import { TestComponent } from './test/test.component';
 import { LibraryComponent } from './library/library.component';
 import { MusicCardHorizontalComponent } from './music-card-horizontal/music-card-horizontal.component';
 import { ShowPlaylistComponent } from './show-playlist/show-playlist.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ShowPlaylistComponent } from './show-playlist/show-playlist.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
