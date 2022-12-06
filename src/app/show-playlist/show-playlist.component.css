@@ -12,3 +12,12 @@
   color:white;
   font-size: 60px;
 }
+.deletar_playlist{
+  color:red;
+  float:right;
+  margin-right:20px;
+}
+.deletar_playlist:hover{
+  color:white;
+  cursor: pointer;
+}

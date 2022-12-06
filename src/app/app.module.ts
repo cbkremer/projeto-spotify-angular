@@ -13,6 +13,9 @@ import { LibraryComponent } from './library/library.component';
 import { MusicCardHorizontalComponent } from './music-card-horizontal/music-card-horizontal.component';
 import { ShowPlaylistComponent } from './show-playlist/show-playlist.component';
 import { FormsModule } from '@angular/forms';
+import { MusicMusicCardComponent } from './music-music-card/music-music-card.component';
+import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
+import { CriarContaComponent } from './criar-conta/criar-conta.component';
 
 
 @NgModule({
@@ -26,6 +29,9 @@ import { FormsModule } from '@angular/forms';
     LibraryComponent,
     MusicCardHorizontalComponent,
     ShowPlaylistComponent,
+    MusicMusicCardComponent,
+    AddPlaylistComponent,
+    CriarContaComponent,
   ],
   imports: [
     BrowserModule,

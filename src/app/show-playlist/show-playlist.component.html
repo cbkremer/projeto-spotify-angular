@@ -1,6 +1,9 @@
 i<section class="center_main_section">
 
   <div class="horizontal_card_div">
+    <div class="deletar_playlist" (click)="deletarPlaylist()">
+      Deletar Playlist
+    </div>
     <div *ngIf="editar_nome == false" class="playlist_name">{{playlist.name}}</div>
     <div *ngIf="editar_nome == true" class="playlist_name">
       <input id="nome_input" [(ngModel)]="playlist.name" name="playlist.name">
