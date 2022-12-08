@@ -1,3 +1,4 @@
+import { UserInfoService } from './../user-info/user-info.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -16,11 +17,13 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class MusicService {
-  private name = "nome8";
+  private name = "";
   private delete_from_playlist_by_tag_url = 'http://localhost:8082/music/remove/';
   private url: string = '';
   private get_music_by_tag_url = 'http://localhost:8082/music/';
-  constructor(private httpClient: HttpClient,private route: ActivatedRoute) { }
+  constructor(private httpClient: HttpClient,private route: ActivatedRoute,private user_service: UserInfoService) {
+    this.name = user_service.getUserName();
+  }
   getMusic(tag: string): Observable<MusicModel>{
     return this.httpClient.get<MusicModel>(this.get_music_by_tag_url+tag);
   }

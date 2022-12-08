@@ -17,7 +17,7 @@ export class SideBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.user_service.getUser().subscribe((user_info: UserInfoModel) => {
-      console.table(user_info);
+      //console.table(user_info);
       this.user_info = user_info;
       //this.user_info.playlists = JSON.parse(user_info.playlists);
     });

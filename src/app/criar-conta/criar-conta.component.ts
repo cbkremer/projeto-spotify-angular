@@ -1,5 +1,7 @@
+import { UserInfoModel } from './../model/user_info.model';
 import { UserInfoService } from './../services/user-info/user-info.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-conta',
@@ -7,10 +9,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./criar-conta.component.css']
 })
 export class CriarContaComponent implements OnInit {
-
-  constructor(private user_service: UserInfoService) { }
+  user_info: UserInfoModel;
+  user_name: string = '';
+  password: string = '';
+  email: string = '';
+  constructor(private user_service: UserInfoService, private router: Router) {
+    this.user_info = {name: '', email: '',password:'',playlists:[]}
+  }
 
   ngOnInit(): void {
   }
-
+  public criarConta(){
+    this.user_info.name = this.user_name;
+    this.user_info.email = this.email;
+    this.user_info.password = this.password;
+    this.user_service.createUser(this.user_info).subscribe(response => {
+      console.log(response);
+    });
+    //this.router.navigate(['library/'+this.user_info.name]);
+  }
 }

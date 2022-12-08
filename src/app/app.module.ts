@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { MusicMusicCardComponent } from './music-music-card/music-music-card.component';
 import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
 import { CriarContaComponent } from './criar-conta/criar-conta.component';
+import { LoginScreenComponent } from './login-screen/login-screen.component';
+import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { CriarContaComponent } from './criar-conta/criar-conta.component';
     MusicMusicCardComponent,
     AddPlaylistComponent,
     CriarContaComponent,
+    LoginScreenComponent,
+    MinhaContaComponent,
   ],
   imports: [
     BrowserModule,
