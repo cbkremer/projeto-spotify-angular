@@ -9,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MinhaContaComponent implements OnInit {
   user_info: UserInfoModel | any;
+  editar_nome: boolean = false;
+  editar_email: boolean = false;
+  editar_senha: boolean = false;
+
   constructor(private user_service:UserInfoService) {
 
     this.user_service.getUser().subscribe((user: UserInfoModel) => {
@@ -22,5 +26,27 @@ export class MinhaContaComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  public editarNome(){
+    this.editar_nome = true;
+  }
+  public salvarNome(){
+    this.user_service.updateUserName(this.user_info).subscribe();
+    this.editar_nome = false;
+    //medida provisoria, mudar isso depois pelo amor de deus
+    //this.user_service.setUserName(this.user_info.name);
+  }
+  public editarEmail(){
+    this.editar_email = true;
+  }
+  public salvarEmail(){
+    this.user_service.updateUserEmail(this.user_info).subscribe();
+    this.editar_email = false;
+  }
+  public editarSenha(){
+    this.editar_senha = true;
+  }
+  public salvarSenha(){
+    this.user_service.updateUserPassword(this.user_info).subscribe();
+    this.editar_senha = false;
+  }
 }

@@ -23,9 +23,9 @@ export class SideBarComponent implements OnInit {
     });
   }
   public goToLibrary(){
-    this.router.navigate(['library/'+this.user_info.name]);
+    this.router.navigate(['library/'+this.user_service.getUserName()]);
   }
   public goToHome(){
-    this.router.navigate(['center-main/'+this.user_info.name]);
+    this.router.navigate(['center-main/'+this.user_service.getUserName()]);
   }
 }
