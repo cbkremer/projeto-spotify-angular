@@ -1,4 +1,7 @@
 <section class="center_main_section">
+  <div class="deletar_usuario" (click)="deletarUsuario()">
+    Deletar Conta
+  </div>
   <div *ngIf="editar_nome == false" class="name">{{user_info.name}}</div>
     <div *ngIf="editar_nome == true" class="name">
       <input id="nome_input" [(ngModel)]="user_info.name" name="user_info.name">
@@ -16,6 +19,7 @@
     <div *ngIf="editar_senha == true" class="name">
       <input type="password" id="nome_input" [(ngModel)]="user_info.password" name="user_info.password">
     </div>
+    <div *ngIf="no_password == true" class="password_warning">Insira uma senha</div>
     <div *ngIf="editar_senha == false" class="alterar_nome"  (click)="editarSenha()">Alterar senha</div>
     <div *ngIf="editar_senha == true" class="alterar_nome" (click)="salvarSenha()">Salvar</div>
 </section>

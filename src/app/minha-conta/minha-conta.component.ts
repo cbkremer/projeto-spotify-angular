@@ -12,6 +12,7 @@ export class MinhaContaComponent implements OnInit {
   editar_nome: boolean = false;
   editar_email: boolean = false;
   editar_senha: boolean = false;
+  no_password: boolean = false;
 
   constructor(private user_service:UserInfoService) {
 
@@ -46,7 +47,17 @@ export class MinhaContaComponent implements OnInit {
     this.editar_senha = true;
   }
   public salvarSenha(){
-    this.user_service.updateUserPassword(this.user_info).subscribe();
-    this.editar_senha = false;
+    if(this.user_info.password == '' || this.user_info.password == undefined){
+      this.no_password = true;
+    }
+    else{
+      this.user_service.updateUserPassword(this.user_info).subscribe();
+      this.user_info.password = '';
+      this.editar_senha = false;
+      this.no_password = false;
+    }
+  }
+  public deletarUsuario(){
+
   }
 }

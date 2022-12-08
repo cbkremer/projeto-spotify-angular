@@ -2,6 +2,9 @@
   color:white;
   font-size: 60px;
 }
+.alterar_nome{
+  width:100px;
+}
 .alterar_nome:hover{
   color:white;
   cursor: pointer;
