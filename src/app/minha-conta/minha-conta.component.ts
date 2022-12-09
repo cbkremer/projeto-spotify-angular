@@ -58,6 +58,6 @@ export class MinhaContaComponent implements OnInit {
     }
   }
   public deletarUsuario(){
-
+    this.user_service.deleteUser(this.user_info).subscribe();
   }
 }
