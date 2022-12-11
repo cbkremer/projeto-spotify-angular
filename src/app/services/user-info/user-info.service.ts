@@ -4,10 +4,7 @@ import { catchError, Observable, tap } from 'rxjs';
 import { UserInfoModel } from 'src/app/model/user_info.model';
 
 const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    Authorization: 'my-auth-token'
-  })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 export interface Response {
   status: number,
@@ -20,7 +17,7 @@ export class UserInfoService {
   //private user_info: UserInfoModel | undefined;
   private user_info: UserInfoModel
   //dar uma ajeitada nisso depois
-  private name = "asd";
+  private name = "";
   private get_one_url = 'http://localhost:8082/user_info/';
   private criar_conta_url = 'http://localhost:8082/user_info';
   private update_user_name_url = 'http://localhost:8082/user_info/name/';

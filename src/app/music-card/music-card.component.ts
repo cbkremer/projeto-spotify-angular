@@ -29,8 +29,11 @@ export class MusicCardComponent implements OnInit {
 
   public criarPlaylist(){
     console.log('criar nova');
-    this.playlist_service.createPlaylist(this.playlists.length+1).subscribe();
-    location.reload();
+    this.playlist_service.createPlaylist(this.playlists.length+1).subscribe(response => {
+      console.log(response);
+      //        :)
+    });
+    //location.reload();
   }
   public abrirPlaylist(playlist: PlaylistModel){
     //console.log(playlist);

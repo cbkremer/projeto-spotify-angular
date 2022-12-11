@@ -13,6 +13,7 @@ export class CriarContaComponent implements OnInit {
   user_name: string = '';
   password: string = '';
   email: string = '';
+  aviso: any;
   constructor(private user_service: UserInfoService, private router: Router) {
     this.user_info = {name: '', email: '',password:'',playlists:[]}
   }
@@ -23,8 +24,8 @@ export class CriarContaComponent implements OnInit {
     this.user_info.name = this.user_name;
     this.user_info.email = this.email;
     this.user_info.password = this.password;
-    this.user_service.createUser(this.user_info).subscribe(response => {
-      console.log(response);
+    this.user_service.createUser(this.user_info).subscribe((response: any) => {
+      this.aviso = JSON.stringify(response.response);
     });
     //this.router.navigate(['library/'+this.user_info.name]);
   }
