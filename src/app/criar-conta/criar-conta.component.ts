@@ -16,6 +16,7 @@ export class CriarContaComponent implements OnInit {
   aviso: any;
   constructor(private user_service: UserInfoService, private router: Router) {
     this.user_info = {name: '', email: '',password:'',playlists:[]}
+    this.aviso = '';
   }
 
   ngOnInit(): void {

@@ -1,3 +1,4 @@
+import { TopBarComponent } from './../top-bar/top-bar.component';
 import { UserInfoModel } from 'src/app/model/user_info.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -20,6 +21,7 @@ export class LoginScreenComponent implements OnInit {
   ngOnInit(): void {
   }
   public logar(){
-    this.router.navigate(['library/'+this.user_info.name]);
+    this.user_service.setUserByEmail(this.email);
+    //this.router.navigate(['library/'+this.user_service.getUserName()]);
   }
 }

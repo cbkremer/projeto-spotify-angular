@@ -30,4 +30,13 @@ export class TopBarComponent implements OnInit {
   public goToMinhaConta(){
     this.router.navigate(['minha-conta/'+this.user_name]);
   }
+  checkLogIn(){
+    this.user_name = this.user_service.getUserName();
+    if(this.user_name == '' || this.user_name == null || this.user_name == undefined){
+      this.logged_in = false;
+    }
+    else{
+      this.logged_in = true;
+    }
+  }
 }

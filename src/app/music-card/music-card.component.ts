@@ -33,7 +33,7 @@ export class MusicCardComponent implements OnInit {
       console.log(response);
       //        :)
     });
-    //location.reload();
+    location.reload();
   }
   public abrirPlaylist(playlist: PlaylistModel){
     //console.log(playlist);

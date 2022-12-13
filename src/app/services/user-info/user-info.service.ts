@@ -17,8 +17,9 @@ export class UserInfoService {
   //private user_info: UserInfoModel | undefined;
   private user_info: UserInfoModel
   //dar uma ajeitada nisso depois
-  private name = "";
+  private name = "asdo";
   private get_one_url = 'http://localhost:8082/user_info/';
+  private get_one_url_by_email = 'http://localhost:8082/user_info/email/';
   private criar_conta_url = 'http://localhost:8082/user_info';
   private update_user_name_url = 'http://localhost:8082/user_info/name/';
   private update_user_email_url = 'http://localhost:8082/user_info/email/';
@@ -45,6 +46,13 @@ export class UserInfoService {
       }
       )
     );
+  }
+  setUserByEmail(email: string){
+    console.log('here');
+    return this.httpClient.get<UserInfoModel>(this.get_one_url_by_email+email).subscribe(user => {
+      this.user_info = user;
+      this.name = user.name;
+    });
   }
   createUser(user_info: UserInfoModel){
     return this.httpClient.post<UserInfoModel>(this.criar_conta_url, user_info, {responseType: 'json'});
