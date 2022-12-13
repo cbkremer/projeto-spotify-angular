@@ -1,3 +1,4 @@
+import { PlaylistService } from './../services/playlist/playlist.service';
 import { UserInfoService } from './../services/user-info/user-info.service';
 import { UserInfoModel } from 'src/app/model/user_info.model';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +15,7 @@ export class MinhaContaComponent implements OnInit {
   editar_senha: boolean = false;
   no_password: boolean = false;
 
-  constructor(private user_service:UserInfoService) {
+  constructor(private user_service:UserInfoService, private playlist_service:PlaylistService) {
 
     this.user_service.getUser().subscribe((user: UserInfoModel) => {
       console.table(user);

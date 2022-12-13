@@ -7,11 +7,7 @@ export class LoginServiceService {
 
   constructor() { }
   login(email:string) {
-    localStorage.setItem('Name', email);
-  }
-
-  getCostumer() {
-    const user = {
-      Name:  sessionStorage.getItem('firstName');
+    localStorage.setItem('email', email);
+    console.log(localStorage.getItem("email"));
   }
 }

@@ -21,7 +21,9 @@ export class LoginScreenComponent implements OnInit {
   ngOnInit(): void {
   }
   public logar(){
-    this.user_service.setUserByEmail(this.email);
+    localStorage.setItem("email",this.email);
+    console.log(localStorage.getItem("email"));
+    this.user_service.setUserByEmail(localStorage.getItem('email'));
     //this.router.navigate(['library/'+this.user_service.getUserName()]);
   }
 }

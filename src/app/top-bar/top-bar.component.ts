@@ -39,4 +39,7 @@ export class TopBarComponent implements OnInit {
       this.logged_in = true;
     }
   }
+  checkEmailHaHa(){
+    console.log(localStorage.getItem('email'));
+  }
 }

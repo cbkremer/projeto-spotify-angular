@@ -24,6 +24,7 @@ export class PlaylistService {
   private update_playlist_url = 'http://localhost:8082/playlist/';
   private post_playlist_url = 'http://localhost:8082/playlist/';
   private delete_playlist_url = 'http://localhost:8082/playlist/';
+  private delete_user_playlists_url = 'http://localhost:8082/user_info/';
   private new_playlist:PlaylistModel;
   tag: string | null = '';
   constructor(
@@ -53,6 +54,10 @@ export class PlaylistService {
   }
   deletePlaylist(tag:string){
     return this.httpClient.delete(this.delete_playlist_url+tag, httpOptions);
+  }
+  //não usado ainda
+  deleteUserPlaylists(name:string){
+    return this.httpClient.delete(this.delete_user_playlists_url+name,httpOptions);
   }
   setUserName(name: string){
     this.name = name;

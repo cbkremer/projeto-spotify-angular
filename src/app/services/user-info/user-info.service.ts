@@ -1,3 +1,4 @@
+import { PlaylistService } from './../playlist/playlist.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, tap } from 'rxjs';
@@ -15,9 +16,9 @@ export interface Response {
 })
 export class UserInfoService {
   //private user_info: UserInfoModel | undefined;
-  private user_info: UserInfoModel
+  private user_info: UserInfoModel;
   //dar uma ajeitada nisso depois
-  private name = "asdo";
+  private name = "";
   private get_one_url = 'http://localhost:8082/user_info/';
   private get_one_url_by_email = 'http://localhost:8082/user_info/email/';
   private criar_conta_url = 'http://localhost:8082/user_info';
@@ -30,9 +31,9 @@ export class UserInfoService {
 
   constructor(private httpClient: HttpClient) {
     this.user_info = {name: '', email: '',password: '',playlists:[]};
-    this.getUser().subscribe((user_info => {
+    /*this.getUser().subscribe((user_info => {
       this.user_info = user_info;
-    }));
+    }));*/
   }
   getUser(): Observable<UserInfoModel>{
     return this.httpClient.get<UserInfoModel>(this.get_one_url+this.name).pipe(
@@ -47,7 +48,7 @@ export class UserInfoService {
       )
     );
   }
-  setUserByEmail(email: string){
+  setUserByEmail(email: string | null){
     console.log('here');
     return this.httpClient.get<UserInfoModel>(this.get_one_url_by_email+email).subscribe(user => {
       this.user_info = user;
@@ -67,7 +68,6 @@ export class UserInfoService {
     return this.httpClient.put<UserInfoModel>(this.update_user_password_url+this.name, user_info, httpOptions);
   }
   public deleteUser(user_info:UserInfoModel){
-    //deletar playlists antes
     return this.httpClient.delete<UserInfoModel>(this.delete_user_url+user_info.email, httpOptions);
   }
 
