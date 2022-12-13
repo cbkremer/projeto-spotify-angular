@@ -1,0 +1,16 @@
+<section class="center_main_section">
+    <div class="title">
+        <h1>Quer adicionar para qual playlist?</h1>
+    </div>
+    <div *ngFor="let playlist of playlists">
+        <div class="music_card_div" (click)="selectPlaylist(playlist)">
+            <div class="music_card_icon">
+            placeholder
+            </div>
+            <div class="music_card_info">
+            <h4>{{playlist.name}}</h4>
+            <h5>Musicas: {{playlist.quantity}}</h5>
+            </div>
+        </div>
+    </div>
+</section>

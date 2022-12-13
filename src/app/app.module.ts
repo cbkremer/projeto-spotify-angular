@@ -18,6 +18,7 @@ import { AddPlaylistComponent } from './add-playlist/add-playlist.component';
 import { CriarContaComponent } from './criar-conta/criar-conta.component';
 import { LoginScreenComponent } from './login-screen/login-screen.component';
 import { MinhaContaComponent } from './minha-conta/minha-conta.component';
+import { SelectPlaylistComponent } from './select-playlist/select-playlist.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MinhaContaComponent } from './minha-conta/minha-conta.component';
     CriarContaComponent,
     LoginScreenComponent,
     MinhaContaComponent,
+    SelectPlaylistComponent,
   ],
   imports: [
     BrowserModule,

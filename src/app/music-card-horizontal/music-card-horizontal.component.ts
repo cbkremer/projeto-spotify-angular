@@ -65,6 +65,7 @@ export class MusicCardHorizontalComponent implements OnInit {
     //console.log(music_choice);
     this.music_service.deleteMusicFromPlaylistByTag(this.tag,music_choice).subscribe();
     this.getPlaylist();
+    location.reload();
   }
   addMusic(music: MusicModel){
 
