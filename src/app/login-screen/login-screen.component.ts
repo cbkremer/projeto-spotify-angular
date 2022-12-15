@@ -22,9 +22,13 @@ export class LoginScreenComponent implements OnInit {
   ngOnInit(): void {
   }
   public logar(){
-    //autenticar
-    this.user_service.setUserByEmail(this.email);
-    this.login_service.login(this.email);
+    this.user_info.email = this.email;
+    this.user_info.password = this.password;
+    this.user_info.name = '';
+    this.user_info.playlists = [];
+    this.login_service.validateUserLogin(this.user_info);
+    //this.user_service.setUserByEmail(this.email);
+    //this.login_service.login(this.email);
     //this.router.navigate(['library/'+this.user_service.getUserName()]);
   }
 }

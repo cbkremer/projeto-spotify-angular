@@ -1,9 +1,7 @@
-import { async } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { UserInfoModel } from './../../model/user_info.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { setTimeout } from "timers/promises";
 
 
 
@@ -21,8 +19,12 @@ export interface Response {
 export class LoginServiceService {
   user_info:UserInfoModel | any;
   private get_one_url_by_email = 'http://localhost:8082/user_info/email/';
+  private validate_user_url = 'http://localhost:8082/user_info/validar';
 
-  constructor(private router:Router, private httpClient: HttpClient) { }
+  constructor(private router:Router, private httpClient: HttpClient) {
+
+  }
+
   login(email:string) {
     this.setUserByEmail(email);
   }
@@ -50,6 +52,11 @@ export class LoginServiceService {
     this.router.navigate(['center-main/'+this.user_info.name]).then(() => {
       console.log('hahahaha');
       window.location.reload();
+    });
+  }
+  validateUserLogin(user_info: UserInfoModel | any){
+    return this.httpClient.get<UserInfoModel>(this.validate_user_url, user_info).subscribe((response:any)=>{
+      console.log(JSON.stringify(response.response))
     });
   }
 }

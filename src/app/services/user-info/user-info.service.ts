@@ -49,7 +49,7 @@ export class UserInfoService {
     );
   }
   setUserByEmail(email: string | null){
-    console.log('here');
+    console.log('setting user by email: '+email);
     return this.httpClient.get<UserInfoModel>(this.get_one_url_by_email+email).subscribe(user => {
       this.user_info = user;
       //this.name = user.name;
