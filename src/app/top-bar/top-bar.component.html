@@ -5,6 +5,7 @@
           <li><a (click)="goToInscrever()">Inscrever-se</a></li>
         </div>
         <div *ngIf="logged_in == true">
+          <li><a (click)="logout()">Logout</a></li>
           <li><a (click)="goToMinhaConta()">Minha conta</a></li>
         </div>
         <li><a href="#" style="color:white;font-weight: normal;">|</a></li>

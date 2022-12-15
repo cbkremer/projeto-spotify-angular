@@ -1,3 +1,4 @@
+import { LoginServiceService } from './../services/login/login-service.service';
 import { TopBarComponent } from './../top-bar/top-bar.component';
 import { UserInfoModel } from 'src/app/model/user_info.model';
 import { Component, OnInit } from '@angular/core';
@@ -14,16 +15,16 @@ export class LoginScreenComponent implements OnInit {
   email: string = '';
   password: string = '';
 
-  constructor(private user_service: UserInfoService, private router: Router) {
+  constructor(private user_service: UserInfoService, private router: Router, private login_service: LoginServiceService) {
     this.user_info = {name: '', email: '',password:'',playlists:[]}
   }
 
   ngOnInit(): void {
   }
   public logar(){
-    localStorage.setItem("email",this.email);
-    console.log(localStorage.getItem("email"));
-    this.user_service.setUserByEmail(localStorage.getItem('email'));
+    //autenticar
+    this.user_service.setUserByEmail(this.email);
+    this.login_service.login(this.email);
     //this.router.navigate(['library/'+this.user_service.getUserName()]);
   }
 }

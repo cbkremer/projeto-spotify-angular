@@ -36,7 +36,7 @@ export class UserInfoService {
     }));*/
   }
   getUser(): Observable<UserInfoModel>{
-    return this.httpClient.get<UserInfoModel>(this.get_one_url+this.name).pipe(
+    return this.httpClient.get<UserInfoModel>(this.get_one_url+this.getUserName()).pipe(
       tap(user => {
         if(user.email == undefined||user.email == null|| user.email == ''){
           console.log('epa');
@@ -52,29 +52,28 @@ export class UserInfoService {
     console.log('here');
     return this.httpClient.get<UserInfoModel>(this.get_one_url_by_email+email).subscribe(user => {
       this.user_info = user;
-      this.name = user.name;
+      //this.name = user.name;
+      localStorage.setItem('name',user.name);
     });
   }
   createUser(user_info: UserInfoModel){
     return this.httpClient.post<UserInfoModel>(this.criar_conta_url, user_info, {responseType: 'json'});
   }
   public updateUserName(user_info:UserInfoModel){
-    return this.httpClient.put<UserInfoModel>(this.update_user_name_url+this.name, user_info, httpOptions);
+
+    return this.httpClient.put<UserInfoModel>(this.update_user_name_url+this.getUserName(), user_info, httpOptions);
   }
   public updateUserEmail(user_info:UserInfoModel){
-    return this.httpClient.put<UserInfoModel>(this.update_user_email_url+this.name, user_info, httpOptions);
+    return this.httpClient.put<UserInfoModel>(this.update_user_email_url+this.getUserName(), user_info, httpOptions);
   }
   public updateUserPassword(user_info:UserInfoModel){
-    return this.httpClient.put<UserInfoModel>(this.update_user_password_url+this.name, user_info, httpOptions);
+    return this.httpClient.put<UserInfoModel>(this.update_user_password_url+this.getUserName(), user_info, httpOptions);
   }
   public deleteUser(user_info:UserInfoModel){
     return this.httpClient.delete<UserInfoModel>(this.delete_user_url+user_info.email, httpOptions);
   }
-
-  public setUserName(name:string){
-    this.name = name;
-  }
-  public getUserName():string{
-    return this.name;
+  public getUserName():string | any{
+    console.log('user info get user name: '+localStorage.getItem('name'));
+    return localStorage.getItem('name');
   }
 }
