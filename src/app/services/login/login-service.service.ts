@@ -1,8 +1,8 @@
+
 import { Router } from '@angular/router';
 import { UserInfoModel } from './../../model/user_info.model';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 
 
 const httpOptions = {
@@ -55,8 +55,12 @@ export class LoginServiceService {
     });
   }
   validateUserLogin(user_info: UserInfoModel | any){
-    return this.httpClient.get<UserInfoModel>(this.validate_user_url, user_info).subscribe((response:any)=>{
-      console.log(JSON.stringify(response.response))
+    console.log('validating user login for: ');
+    console.table(user_info);
+    let headers = new Headers({
+      'Content-Type' : 'application/json',
+      'Accept': 'application/json'
     });
+    return this.httpClient.get<UserInfoModel>(this.validate_user_url, user_info).subscribe();
   }
 }

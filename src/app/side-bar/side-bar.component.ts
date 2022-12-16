@@ -23,7 +23,12 @@ export class SideBarComponent implements OnInit {
     });
   }
   public goToLibrary(){
-    this.router.navigate(['library/'+this.user_service.getUserName()]);
+    if(localStorage.getItem('name') == null || localStorage.getItem('name') == undefined || localStorage.getItem('name') == '')
+    {
+      this.router.navigate(['login']);
+    }else{
+      this.router.navigate(['library/'+this.user_service.getUserName()]);
+    }
   }
   public goToHome(){
     this.router.navigate(['center-main/'+this.user_service.getUserName()]);
