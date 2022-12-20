@@ -54,13 +54,9 @@ export class LoginServiceService {
       window.location.reload();
     });
   }
-  validateUserLogin(user_info: UserInfoModel | any){
+  validateUserLogin(user_info: UserInfoModel){
     console.log('validating user login for: ');
     console.table(user_info);
-    let headers = new Headers({
-      'Content-Type' : 'application/json',
-      'Accept': 'application/json'
-    });
-    return this.httpClient.get<UserInfoModel>(this.validate_user_url, user_info).subscribe();
+    return this.httpClient.post<UserInfoModel>(this.validate_user_url, user_info, {responseType: 'json'});
   }
 }
