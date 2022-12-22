@@ -1,4 +1,5 @@
 .music_card_div{
+  transition: 300ms;
   float:left;
   background-color:rgb(39, 39, 39);
   width:200px;

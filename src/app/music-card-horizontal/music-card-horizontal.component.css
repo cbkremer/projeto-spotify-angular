@@ -23,6 +23,7 @@ h5{
 }
 /*--------------------------------------------------------------------------cards*/
 .music_card_div{
+  transition:200ms;
   float:left;
   width:97%;
   height:60px;
