@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { PlaylistService } from './../services/playlist/playlist.service';
 import { UserInfoService } from './../services/user-info/user-info.service';
 import { UserInfoModel } from 'src/app/model/user_info.model';
@@ -15,7 +16,7 @@ export class MinhaContaComponent implements OnInit {
   editar_senha: boolean = false;
   no_password: boolean = false;
 
-  constructor(private user_service:UserInfoService, private playlist_service:PlaylistService) {
+  constructor(private user_service:UserInfoService, private playlist_service:PlaylistService, private router: Router) {
 
     this.user_service.getUser().subscribe((user: UserInfoModel) => {
       console.table(user);
@@ -33,6 +34,7 @@ export class MinhaContaComponent implements OnInit {
   }
   public salvarNome(){
     this.user_service.updateUserName(this.user_info).subscribe();
+    localStorage.setItem('name',this.user_info.name);
     this.editar_nome = false;
     //medida provisoria, mudar isso depois pelo amor de deus
     //this.user_service.setUserName(this.user_info.name);
@@ -60,5 +62,10 @@ export class MinhaContaComponent implements OnInit {
   }
   public deletarUsuario(){
     this.user_service.deleteUser(this.user_info).subscribe();
+    localStorage.clear();
+    this.router.navigate(['center-main/']).then(() => {
+      //console.log('hahahaha');
+      window.location.reload();
+    });
   }
 }

@@ -11,10 +11,12 @@
     z-index: 9999;
 }
 #side_menu a{
+    transition: 200ms;
     text-decoration: none;
     color:gray;
     margin-left:20px;
 }
 #side_menu a:hover{
     color:white;
+    font-size: 110%;
 }
