@@ -2,6 +2,9 @@
   color:white;
   font-size: 60px;
 }
+label{
+  color: white;
+}
 .alterar_nome{
   width:100px;
 }

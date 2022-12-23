@@ -1,25 +1,25 @@
 <section class="center_main_section">
   <h1 class="titulo">Crie a sua conta</h1>
-  <div class="criar_conta_form">
+  <form class="default_form" (ngSubmit)="criarConta()">
     <label class="aviso_conta_info" *ngIf="aviso != ''">{{aviso}}</label>
     <br>
     <br>
-    <label class="criar_conta_label">Nome</label>
+    <label>Nome</label>
     <br>
-    <input class="form_input" [(ngModel)]="user_name" name="user_name" placeholder="nome">
-    <br>
-    <br>
-    <label class="criar_conta_label">Email</label>
-    <br>
-    <input class="form_input" [(ngModel)]="email" name="email" placeholder="exemplo@email.com">
+    <input [(ngModel)]="user_name" name="user_name" placeholder="nome">
     <br>
     <br>
-    <label class="criar_conta_label">Senha</label>
+    <label>Email</label>
     <br>
-    <input type="password" class="form_input" [(ngModel)]="password" name="password" placeholder="**************">
+    <input [(ngModel)]="email" name="email" placeholder="exemplo@email.com">
+    <br>
+    <br>
+    <label>Senha</label>
+    <br>
+    <input [(ngModel)]="password" name="password" placeholder="**************">
     <br>
     <br>
     <br>
-    <label class="criar_botao" (click)="criarConta()">Criar Conta</label>
-  </div>
+    <button type="submit">Criar Conta</button>
+  </form>
 </section>

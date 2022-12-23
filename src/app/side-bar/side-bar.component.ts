@@ -33,4 +33,7 @@ export class SideBarComponent implements OnInit {
   public goToHome(){
     this.router.navigate(['center-main/'+this.user_service.getUserName()]);
   }
+  public goToAddMusic(){
+    this.router.navigate(['add-music']);
+  }
 }

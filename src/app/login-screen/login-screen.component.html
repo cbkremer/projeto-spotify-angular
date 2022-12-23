@@ -1,6 +1,6 @@
 <section class="center_main_section">
   <h1 class="titulo">Login</h1>
-  <div class="criar_conta_form">
+  <form class="default_form" (ngSubmit)="logar()">
     <label class="aviso_conta_info" *ngIf="aviso != ''">{{aviso}}</label>
     <br>
     <br>
@@ -15,6 +15,6 @@
     <br>
     <br>
     <br>
-    <label class="criar_botao" (click)="logar()">Entrar</label>
-  </div>
+    <button type="submit">Entrar</button>
+  </form>
 </section>

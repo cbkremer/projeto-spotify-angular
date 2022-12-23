@@ -1,25 +1,6 @@
 .titulo{
   color:white;
 }
-.form_input{
-  width:70%;
-  height:30px;
-  font-size: 20px;
-  background: rgba(0, 0, 0, 0);
-  border-style: solid;
-  color:white;
-}
-.criar_conta_label{
-  color:white;
-}
-.criar_botao{
-  background-color: black;
-  padding:20px;
-}
-.criar_botao:hover{
-  color:white;
-  cursor: pointer;
-}
 .aviso_conta_info{
   color:red;
 }

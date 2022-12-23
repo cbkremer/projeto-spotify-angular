@@ -30,3 +30,36 @@ a:hover {
   margin-left: 19%;
   margin-top: 82px;
 }
+/*                                                                          default form*/
+.default_form input{
+  transition:500ms;
+  width:70%;
+  height:30px;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0);
+  border-style: solid;
+  color:white;
+}
+.default_form input:hover{
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 4px;
+}
+.default_form label{
+  color:white;
+}
+.default_form button{
+  transition: 200ms;
+  padding:20px;
+  background: none;
+  background-color: black;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.default_form button:hover{
+  color: white;
+  background-color: rgb(43, 43, 43);
+}
+/*                                                                          default form*/

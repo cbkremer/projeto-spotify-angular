@@ -2,24 +2,26 @@
   <div class="deletar_usuario" (click)="deletarUsuario()">
     Deletar Conta
   </div>
+  <label for="nome">Nome:</label>
   <div *ngIf="editar_nome == false" class="name">{{user_info.name}}</div>
-    <div *ngIf="editar_nome == true" class="name">
-      <input id="nome_input" [(ngModel)]="user_info.name" name="user_info.name">
-    </div>
-    <div *ngIf="editar_nome == false" class="alterar_nome"  (click)="editarNome()">Alterar nome</div>
-    <div *ngIf="editar_nome == true" class="alterar_nome" (click)="salvarNome()">Salvar</div>
-
+  <div *ngIf="editar_nome == true" class="name">
+    <input id="nome_input" [(ngModel)]="user_info.name" name="user_info.name">
+  </div>
+  <div *ngIf="editar_nome == false" class="alterar_nome" (click)="editarNome()">Alterar nome</div>
+  <div *ngIf="editar_nome == true" class="alterar_nome" (click)="salvarNome()">Salvar</div>
+  <br>
+  <label for="email">Email:</label>
   <div *ngIf="editar_email == false" class="name">{{user_info.email}}</div>
-    <div *ngIf="editar_email == true" class="name">
-      <input id="nome_input" [(ngModel)]="user_info.email" name="user_info.email">
-    </div>
-    <div *ngIf="editar_email == false" class="alterar_nome"  (click)="editarEmail()">Alterar email</div>
-    <div *ngIf="editar_email == true" class="alterar_nome" (click)="salvarEmail()">Salvar</div>
-
-    <div *ngIf="editar_senha == true" class="name">
-      <input type="password" id="nome_input" [(ngModel)]="user_info.password" name="user_info.password">
-    </div>
-    <div *ngIf="no_password == true" class="password_warning">Insira uma senha</div>
-    <div *ngIf="editar_senha == false" class="alterar_nome"  (click)="editarSenha()">Alterar senha</div>
-    <div *ngIf="editar_senha == true" class="alterar_nome" (click)="salvarSenha()">Salvar</div>
+  <div *ngIf="editar_email == true" class="name">
+    <input id="nome_input" [(ngModel)]="user_info.email" name="user_info.email">
+  </div>
+  <div *ngIf="editar_email == false" class="alterar_nome" (click)="editarEmail()">Alterar email</div>
+  <div *ngIf="editar_email == true" class="alterar_nome" (click)="salvarEmail()">Salvar</div>
+  <br>
+  <div *ngIf="editar_senha == true" class="name">
+    <input type="password" id="nome_input" [(ngModel)]="user_info.password" name="user_info.password">
+  </div>
+  <div *ngIf="no_password == true" class="password_warning">Insira uma senha</div>
+  <div *ngIf="editar_senha == false" class="alterar_nome" (click)="editarSenha()">Alterar senha</div>
+  <div *ngIf="editar_senha == true" class="alterar_nome" (click)="salvarSenha()">Salvar</div>
 </section>

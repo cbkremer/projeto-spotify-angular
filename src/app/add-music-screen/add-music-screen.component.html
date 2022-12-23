@@ -1,0 +1,17 @@
+<section class="center_main_section">
+  <h1>Adicionar Música</h1>
+  <br>
+  <br>
+  <form class="default_form" (ngSubmit)="addMusica()">
+    <label>Nome</label>
+    <br>
+    <input
+      placeholder="nome"
+      [(ngModel)]="music.name"
+      name = 'nome'
+    />
+    <br>
+    <br>
+    <button type="submit">Adicionar</button>
+  </form>
+</section>
