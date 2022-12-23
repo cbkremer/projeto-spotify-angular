@@ -24,4 +24,7 @@ export class MusicMusicCardComponent implements OnInit {
     this.music_service.receiveMusic(music);
     this.router.navigate(['library/'+this.user_service.getUserName()+'/select-playlist']);
   }
+  addMusica(){
+    console.log()
+  }
 }
