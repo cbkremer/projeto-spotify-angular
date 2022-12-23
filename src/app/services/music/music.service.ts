@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    Authorization: 'my-auth-token'
+    Authorization: 'my-auth-token',
   })
 };
 
@@ -23,6 +23,7 @@ export class MusicService {
   private url: string = '';
   private get_music_by_tag_url = 'http://localhost:8082/music/';
   private add_to_playlist_url = 'http://localhost:8082/music/add/';
+  private post_music_url = 'http://localhost:8082/music';
 
   private received_music: MusicModel;
   constructor(private httpClient: HttpClient,private route: ActivatedRoute,private user_service: UserInfoService) {
@@ -51,5 +52,8 @@ export class MusicService {
   }
   addMusicToPlaylist(music:MusicModel,playlist:PlaylistModel){
     return this.httpClient.put<MusicModel>(this.add_to_playlist_url+playlist.tag, music, httpOptions);
+  }
+  postMusic(music:MusicModel){
+    return this.httpClient.post<MusicModel>(this.post_music_url, music, {responseType: 'json'});
   }
 }
