@@ -45,7 +45,7 @@ export class PlaylistService {
     return this.httpClient.get<PlaylistModel>(this.get_playlist_url+tag);
   }
   updatePlaylist(playlist:PlaylistModel){
-    console.log("update called");
+    console.log("update playlist called");
     return this.httpClient.put<PlaylistModel>(this.update_playlist_url+this.name, playlist, httpOptions);
   }
   createPlaylist(num: number){

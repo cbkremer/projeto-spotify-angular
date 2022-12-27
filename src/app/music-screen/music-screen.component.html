@@ -1,0 +1,14 @@
+<section class="center_main_section">
+    <div class="deletar_playlist" (click)="deletarMusica()">
+      Deletar Musica
+    </div>
+    <div *ngIf="editar_nome == false" class="playlist_name">{{music.name}}</div>
+    <div *ngIf="editar_nome == true" class="playlist_name">
+      <input id="nome_input" [(ngModel)]="music.name" name="playlist.name">
+    </div>
+    <div *ngIf="editar_nome == false" class="alterar_nome"  (click)="editarNome()">Alterar nome</div>
+    <div *ngIf="editar_nome == true" class="alterar_nome" (click)="salvarNome()">Salvar</div>
+    <div class="add_para_playlist" (click)="addParaPlaylist()">
+      Adicionar à uma playlist
+    </div>
+</section>

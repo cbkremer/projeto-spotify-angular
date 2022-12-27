@@ -21,8 +21,9 @@ export class MusicMusicCardComponent implements OnInit {
     });
   }
   abrirMusica(music: MusicModel){
-    this.music_service.receiveMusic(music);
-    this.router.navigate(['library/'+this.user_service.getUserName()+'/select-playlist']);
+    //this.music_service.receiveMusic(music);
+    //this.router.navigate(['library/'+this.user_service.getUserName()+'/select-playlist']);
+    this.router.navigate(['music/'+music.tag]);
   }
   addMusica(){
     console.log()

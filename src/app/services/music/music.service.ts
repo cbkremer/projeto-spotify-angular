@@ -24,6 +24,8 @@ export class MusicService {
   private get_music_by_tag_url = 'http://localhost:8082/music/';
   private add_to_playlist_url = 'http://localhost:8082/music/add/';
   private post_music_url = 'http://localhost:8082/music';
+  private update_music_url = 'http://localhost:8082/music';
+  private delete_music_url = 'http://localhost:8082/music/delete/';
 
   private received_music: MusicModel;
   constructor(private httpClient: HttpClient,private route: ActivatedRoute,private user_service: UserInfoService) {
@@ -55,5 +57,15 @@ export class MusicService {
   }
   postMusic(music:MusicModel){
     return this.httpClient.post<MusicModel>(this.post_music_url, music, {responseType: 'json'});
+  }
+  updateMusic(music:MusicModel){
+    console.log('update music called passing the music:')
+    console.table(music);
+    return this.httpClient.put<MusicModel>(this.update_music_url, music, {responseType: 'json'});
+  }
+  deleteMusic(music:MusicModel){
+    console.log('delete music called for the music:')
+    console.table(music);
+    return this.httpClient.delete<MusicModel>(this.delete_music_url+music.tag, {responseType: 'json'});
   }
 }
