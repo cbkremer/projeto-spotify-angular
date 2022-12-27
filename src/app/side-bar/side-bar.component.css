@@ -20,3 +20,16 @@
     color:white;
     font-size: 110%;
 }
+#side_menu i{
+  cursor: pointer;
+  font-style: normal;
+  transition: 200ms;
+  text-decoration: none;
+  color:gray;
+  margin-left:20px;
+}
+#side_menu i:hover{
+  color:white;
+  font-size: 110%;
+}
+
