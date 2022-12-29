@@ -28,7 +28,7 @@ export class CriarContaComponent implements OnInit {
     this.user_info.password = this.password;
     this.user_service.createUser(this.user_info).subscribe((response: any) => {
       this.aviso = JSON.stringify(response.response);
-      this.login_service.login(this.user_info.email);
+      //this.login_service.login(this.user_info.email);
     });
     //this.router.navigate(['library/'+this.user_info.name]);
   }

@@ -24,3 +24,7 @@
   color:white;
   cursor: pointer;
 }
+.add_para_playlist:hover{
+  cursor: pointer;
+  color: white;
+}
