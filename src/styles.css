@@ -69,3 +69,36 @@ a:hover {
   background-color: rgb(43, 43, 43);
 }
 /*                                                                          default form*/
+/*----------------------------------------------------------------------------editar dados*/
+.playlist_name{
+  color:white;
+  font-size: 60px;
+}
+.alterar_nome{
+  float: left;
+  width: auto;
+  margin-right: 20px;
+}
+.alterar_nome:hover{
+  color:white;
+  cursor: pointer;
+}
+#nome_input{
+  background: rgba(0, 0, 0, 0);
+  border-style: solid;
+  color:white;
+  font-size: 60px;
+}
+.deletar_playlist{
+  color:red;
+  float:right;
+  margin-right:20px;
+}
+.deletar_playlist:hover{
+  color:white;
+  cursor: pointer;
+}
+.add_para_playlist:hover{
+  cursor: pointer;
+  color: white;
+}

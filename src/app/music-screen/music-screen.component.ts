@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MusicScreenComponent implements OnInit {
   editar_nome: boolean = false;
+  temp_nome: string = '';
   music:MusicModel|any;
   constructor(
     private route: ActivatedRoute,
@@ -37,6 +38,7 @@ export class MusicScreenComponent implements OnInit {
     });
   }
   editarNome(){
+    this.temp_nome = this.music.name;
     this.editar_nome = true;
   }
   salvarNome(){
@@ -44,6 +46,11 @@ export class MusicScreenComponent implements OnInit {
       console.log(JSON.stringify(response.response));
     });
     this.editar_nome=false;
+  }
+  cancelarNome(){
+    this.editar_nome = false;
+    this.music.name = this.temp_nome;
+    this.temp_nome = '';
   }
   addParaPlaylist(){
     this.music_service.receiveMusic(this.music);

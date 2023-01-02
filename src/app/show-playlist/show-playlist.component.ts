@@ -14,6 +14,7 @@ export class ShowPlaylistComponent implements OnInit {
   user_name: any;
   playlist: PlaylistModel;
   editar_nome = false;
+  temp_nome: string = '';
 
 
 
@@ -29,6 +30,7 @@ export class ShowPlaylistComponent implements OnInit {
     });
   }
   public editarNome(){
+    this.temp_nome = this.playlist.name;
     this.editar_nome = true;
     console.log("editar nome");
   }
@@ -36,6 +38,12 @@ export class ShowPlaylistComponent implements OnInit {
     this.playlist_service.updatePlaylist(this.playlist).subscribe();
     console.log(this.playlist);
     this.editar_nome = false;
+    this.temp_nome = '';
+  }
+  cancelarNome(){
+    this.playlist.name = this.temp_nome;
+    this.editar_nome = false;
+    this.temp_nome = '';
   }
   public deletarPlaylist(){
     this.playlist_service.deletePlaylist(this.tag).subscribe();

@@ -3,7 +3,9 @@
   font-size: 60px;
 }
 .alterar_nome{
-  width:100px;
+  float: left;
+  width: auto;
+  margin-right: 20px;
 }
 .alterar_nome:hover{
   color:white;
