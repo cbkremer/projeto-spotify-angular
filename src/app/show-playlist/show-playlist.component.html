@@ -5,7 +5,9 @@
     </div>
     <div *ngIf="editar_nome == false" class="playlist_name">{{playlist.name}}</div>
     <div *ngIf="editar_nome == true" class="playlist_name">
-      <input id="nome_input" [(ngModel)]="playlist.name" name="playlist.name">
+      <form class="default_form" (ngSubmit)="salvarNome()">
+        <input id="nome_input" [(ngModel)]="playlist.name" name="playlist.name">
+      </form>
     </div>
     <div *ngIf="editar_nome == false" class="alterar_nome"  (click)="editarNome()">Alterar nome</div>
     <div *ngIf="editar_nome == true" class="alterar_nome" (click)="salvarNome()">Salvar</div>

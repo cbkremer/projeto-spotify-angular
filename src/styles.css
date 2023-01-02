@@ -35,7 +35,7 @@ a:hover {
 .default_form input{
   transition: 200ms;
   width:70%;
-  height:30px;
+  height: auto;
   font-size: 20px;
   background: rgba(0, 0, 0, 0);
   color:white;

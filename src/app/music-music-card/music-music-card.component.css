@@ -22,6 +22,7 @@
 }
 .music_card_info, h4, h5{
   margin-left:10px;
+  color:red;
 }
 .music_card_info_nova h4{
   margin-left:0;

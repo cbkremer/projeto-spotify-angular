@@ -43,6 +43,7 @@ export class MusicScreenComponent implements OnInit {
     this.music_service.updateMusic(this.music).subscribe((response:any) => {
       console.log(JSON.stringify(response.response));
     });
+    this.editar_nome=false;
   }
   addParaPlaylist(){
     this.music_service.receiveMusic(this.music);

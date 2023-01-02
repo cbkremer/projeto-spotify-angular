@@ -10,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./minha-conta.component.css']
 })
 export class MinhaContaComponent implements OnInit {
+  temp_nome: string = '';
+  temp_email: string = '';
   user_info: UserInfoModel | any;
   editar_nome: boolean = false;
   editar_email: boolean = false;
@@ -30,20 +32,34 @@ export class MinhaContaComponent implements OnInit {
   ngOnInit(): void {
   }
   public editarNome(){
+    this.temp_nome = this.user_info.name;
     this.editar_nome = true;
   }
   public salvarNome(){
     this.user_service.updateUserName(this.user_info).subscribe();
     localStorage.setItem('name',this.user_info.name);
     this.editar_nome = false;
+    this.temp_nome = '';
     //medida provisoria, mudar isso depois pelo amor de deus
     //this.user_service.setUserName(this.user_info.name);
   }
+  public cancelarNome(){
+    this.user_info.name = this.temp_nome;
+    this.temp_nome = '';
+    this.editar_nome = false;
+  }
   public editarEmail(){
+    this.temp_email = this.user_info.email;
     this.editar_email = true;
   }
   public salvarEmail(){
     this.user_service.updateUserEmail(this.user_info).subscribe();
+    this.temp_email = '';
+    this.editar_email = false;
+  }
+  public cancelarEmail(){
+    this.user_info.email = this.temp_email;
+    this.temp_email = '';
     this.editar_email = false;
   }
   public editarSenha(){
@@ -59,6 +75,10 @@ export class MinhaContaComponent implements OnInit {
       this.editar_senha = false;
       this.no_password = false;
     }
+  }
+  cancelarSenha(){
+    this.editar_senha = false;
+    this.user_info.password = '';
   }
   public deletarUsuario(){
     this.user_service.deleteUser(this.user_info).subscribe();
