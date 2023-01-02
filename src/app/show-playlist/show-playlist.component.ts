@@ -19,7 +19,8 @@ export class ShowPlaylistComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute,private playlist_service: PlaylistService, private router: Router) {
-    this.playlist = {name: '', musicsDTO: [], quantity: 0, user_name: '', tag: ''}
+    this.playlist = {name: '', musicsDTO: [], quantity: 0, user_name: '', tag: ''};
+    this.temp_nome = '';
   }
   ngOnInit(): void {
     this.tag= this.route.snapshot.paramMap.get('playlist_tag');
@@ -28,6 +29,7 @@ export class ShowPlaylistComponent implements OnInit {
       this.playlist = playlist;
       console.log(this.playlist);
     });
+    this.temp_nome = '';
   }
   public editarNome(){
     this.temp_nome = this.playlist.name;

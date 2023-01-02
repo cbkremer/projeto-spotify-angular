@@ -23,6 +23,8 @@ export class MinhaContaComponent implements OnInit {
     this.user_service.getUser().subscribe((user: UserInfoModel) => {
       console.table(user);
       this.user_info = user;
+      this.temp_nome = '';
+      this.temp_email = '';
       //this.playlist = null;
       //this.playlist = {musics: [], name: '', quantity: 0, user_name: '', tag: 0};
       //this.user_info.playlists = JSON.parse(user_info.playlists);
@@ -30,6 +32,8 @@ export class MinhaContaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.temp_nome = '';
+    this.temp_email = '';
   }
   public editarNome(){
     this.temp_nome = this.user_info.name;

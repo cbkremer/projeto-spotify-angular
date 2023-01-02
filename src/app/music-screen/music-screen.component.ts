@@ -25,8 +25,10 @@ export class MusicScreenComponent implements OnInit {
       console.log(music);
       this.music = music;
     })
+    this.temp_nome = '';
   }
   ngOnInit(): void {
+    this.temp_nome = '';
   }
   deletarMusica(){
     this.music_service.deleteMusic(this.music).subscribe((response:any) => {

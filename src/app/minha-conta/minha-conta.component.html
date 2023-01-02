@@ -13,6 +13,7 @@
   <div *ngIf="editar_nome == true" class="alterar_nome" (click)="salvarNome()">Salvar</div>
   <div *ngIf="editar_nome == true" class="alterar_nome" (click)="cancelarNome()">Cancelar</div>
   <br>
+  <br>
   <label for="email">Email:</label>
   <div *ngIf="editar_email == false" class="name">{{user_info.email}}</div>
   <div *ngIf="editar_email == true" class="name">
@@ -23,6 +24,7 @@
   <div *ngIf="editar_email == false" class="alterar_nome" (click)="editarEmail()">Alterar email</div>
   <div *ngIf="editar_email == true" class="alterar_nome" (click)="salvarEmail()">Salvar</div>
   <div *ngIf="editar_email == true" class="alterar_nome" (click)="cancelarEmail()">Cancelar</div>
+  <br>
   <br>
   <div *ngIf="editar_senha == true" class="name">
     <form class="default_form" (ngSubmit)="salvarSenha()">
