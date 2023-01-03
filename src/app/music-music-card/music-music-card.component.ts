@@ -1,8 +1,8 @@
 import { UserInfoService } from './../services/user-info/user-info.service';
 import { SelectPlaylistComponent } from './../select-playlist/select-playlist.component';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MusicModel } from '../model/music.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MusicService } from '../services/music/music.service';
 
 @Component({
@@ -10,15 +10,20 @@ import { MusicService } from '../services/music/music.service';
   templateUrl: './music-music-card.component.html',
   styleUrls: ['./music-music-card.component.css']
 })
+
 export class MusicMusicCardComponent implements OnInit {
+  @Input() item = '';
   public musics: MusicModel[] = []
   music: MusicModel | any;
-  constructor(private music_service: MusicService, private router: Router, private user_service: UserInfoService) { }
+  is_searching: string | null = '';
+  constructor(private music_service: MusicService, private router: Router, private route: ActivatedRoute)
+  { }
 
   ngOnInit(): void {
     this.music_service.getAllMusics().subscribe((musics: MusicModel[]) =>{
       this.musics = musics;
     });
+    this.is_searching= this.route.snapshot.paramMap.get('search');
   }
   abrirMusica(music: MusicModel){
     //this.music_service.receiveMusic(music);
@@ -27,5 +32,13 @@ export class MusicMusicCardComponent implements OnInit {
   }
   addMusica(){
     console.log()
+  }
+  validateSearch(name: string): boolean{
+    if(name.includes(this.item)){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 }

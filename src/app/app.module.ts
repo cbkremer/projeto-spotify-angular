@@ -21,6 +21,7 @@ import { MinhaContaComponent } from './minha-conta/minha-conta.component';
 import { SelectPlaylistComponent } from './select-playlist/select-playlist.component';
 import { AddMusicScreenComponent } from './add-music-screen/add-music-screen.component';
 import { MusicScreenComponent } from './music-screen/music-screen.component';
+import { SearchScreenComponent } from './search-screen/search-screen.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { MusicScreenComponent } from './music-screen/music-screen.component';
     SelectPlaylistComponent,
     AddMusicScreenComponent,
     MusicScreenComponent,
+    SearchScreenComponent,
   ],
   imports: [
     BrowserModule,

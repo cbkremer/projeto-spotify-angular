@@ -18,7 +18,7 @@ export class MinhaContaComponent implements OnInit {
   editar_senha: boolean = false;
   no_password: boolean = false;
 
-  constructor(private user_service:UserInfoService, private playlist_service:PlaylistService, private router: Router) {
+  constructor(private user_service:UserInfoService, private router: Router) {
 
     this.user_service.getUser().subscribe((user: UserInfoModel) => {
       console.table(user);
@@ -83,6 +83,7 @@ export class MinhaContaComponent implements OnInit {
   cancelarSenha(){
     this.editar_senha = false;
     this.user_info.password = '';
+    this.no_password = false;
   }
   public deletarUsuario(){
     this.user_service.deleteUser(this.user_info).subscribe();

@@ -1,14 +1,34 @@
 <div class="title">
-  <h1>Todas as músicas: </h1>
+  <div *ngIf="is_searching != null">
+    <h1>Músicas encontradas:</h1>
+  </div>
+  <div *ngIf="is_searching == null">
+    <h1>Todas as músicas: </h1>
+  </div>
 </div>
 <div *ngFor="let music of musics">
-  <div class="music_card_div" (click)="abrirMusica(music)">
-    <div class="music_card_icon">
-      placeholder
+  <div *ngIf="is_searching == null">
+    <div class="music_card_div" (click)="abrirMusica(music)">
+      <div class="music_card_icon">
+        placeholder
+      </div>
+      <div class="music_card_info">
+        <h4>{{music.name}}</h4>
+        <h5>{{music.tag}}</h5>
+      </div>
     </div>
-    <div class="music_card_info">
-      <h4>{{music.name}}</h4>
-      <h5>{{music.tag}}</h5>
+  </div>
+  <div *ngIf="is_searching != null">
+    <div *ngIf="validateSearch(music.name) == true">
+      <div class="music_card_div" (click)="abrirMusica(music)">
+        <div class="music_card_icon">
+          placeholder
+        </div>
+        <div class="music_card_info">
+          <h4>{{music.name}}</h4>
+          <h5>{{music.tag}}</h5>
+        </div>
+      </div>
     </div>
   </div>
 </div>

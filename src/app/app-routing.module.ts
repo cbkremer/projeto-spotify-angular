@@ -1,3 +1,4 @@
+import { SearchScreenComponent } from './search-screen/search-screen.component';
 import { MusicScreenComponent } from './music-screen/music-screen.component';
 import { AddMusicScreenComponent } from './add-music-screen/add-music-screen.component';
 import { SelectPlaylistComponent } from './select-playlist/select-playlist.component';
@@ -24,7 +25,8 @@ export const routes: Routes = [
   {path: 'minha-conta/:user_name', component: MinhaContaComponent},
   {path: 'library/:user_name/select-playlist', component: SelectPlaylistComponent},
   {path: 'add-music', component: AddMusicScreenComponent},
-  {path: 'music/:music_tag', component: MusicScreenComponent}
+  {path: 'music/:music_tag', component: MusicScreenComponent},
+  {path: 'search/:search', component: SearchScreenComponent},
   //{path: '', redirectTo: 'extrato', pathMatch:'full'},
   //{path: 'extrato', component: ExtratoComponent},
   //{path: 'nova-transferencia', component: NovaTransferenciaComponent}
