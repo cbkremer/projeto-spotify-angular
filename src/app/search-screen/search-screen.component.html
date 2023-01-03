@@ -2,5 +2,5 @@
   <form class="default_form" (ngSubmit)="pesquisar()">
     <input [(ngModel)]="search" name="search" type="text" placeholder="pesquise aqui" (input)="pesquisar()">
   </form>
-  <app-music-music-card [item]="search"></app-music-music-card>
+  <app-music-music-card [search]="search"></app-music-music-card>
 </section>

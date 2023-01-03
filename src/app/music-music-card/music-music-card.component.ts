@@ -12,8 +12,9 @@ import { MusicService } from '../services/music/music.service';
 })
 
 export class MusicMusicCardComponent implements OnInit {
-  @Input() item = '';
-  public musics: MusicModel[] = []
+  @Input() search = '';
+
+  public musics: MusicModel[] = [];
   music: MusicModel | any;
   is_searching: string | null = '';
   constructor(private music_service: MusicService, private router: Router, private route: ActivatedRoute)
@@ -34,7 +35,7 @@ export class MusicMusicCardComponent implements OnInit {
     console.log()
   }
   validateSearch(name: string): boolean{
-    if(name.includes(this.item)){
+    if(name.includes(this.search)){
       return true;
     }
     else{
