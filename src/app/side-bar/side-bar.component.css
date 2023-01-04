@@ -27,6 +27,8 @@
   text-decoration: none;
   color:gray;
   margin-left:20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 #side_menu i:hover{
   color:white;
